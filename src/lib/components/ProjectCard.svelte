@@ -36,7 +36,7 @@
 		</div>
 
 		<!-- Project Details -->
-		<div class="space-y-2">
+		<div class="space-y-2 text-lg">
 			<!-- Money Level -->
 			<div class="flex items-center">
 				<span class="font-medium text-gray-700">{getMoneyLevelSymbol(project.money_level)}</span>
