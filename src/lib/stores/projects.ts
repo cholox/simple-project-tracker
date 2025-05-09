@@ -35,7 +35,7 @@ export const projects = writable([
     money_level: 1, // $ - Low
     promising_future: false,
     past_customer: true,
-    progress: 10,
+    progress: 60,
     person_in_charge: "Alex Wong",
     importance: ""
   },
