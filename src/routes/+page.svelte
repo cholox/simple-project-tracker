@@ -1,5 +1,7 @@
 <!-- src/routes/+page.svelte -->
 <script lang="ts">
+	import { invalidate } from '$app/navigation';
+	import { onMount } from 'svelte';
 	import ProjectCard from '$lib/components/ProjectCard.svelte';
 	
 	// Use `data` prop passed by SvelteKit
@@ -8,6 +10,14 @@
 	};
 
 	$: gaugeSize = data.projects.length <= 3 ? 25 : 12.5;
+
+	onMount(() => {
+		const interval = setInterval(() => {
+			invalidate(''); // this re-runs +page.server.ts `load()`
+		}, 10 * 60 * 1000); // 10 minutes
+
+		return () => clearInterval(interval); // clean up when component is destroyed
+	});
 </script>
 
 
