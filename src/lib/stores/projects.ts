@@ -2,81 +2,69 @@
 import { writable } from 'svelte/store';
 
 // Sample project data that could be moved to an external API or database in a real application
-export const projects = writable([
-  {
-    id: 1,
-    name: "Website Redesign",
-    start_date: "2025-04-01",
-    end_date: "2025-05-15",
-    money_level: 2, // $$ - Medium
-    promising_future: true,
-    past_customer: true,
-    progress: 75,
-    person_in_charge: "Sarah Johnson",
-    importance: ""
-  },
-  {
-    id: 2,
-    name: "Mobile App Development",
-    start_date: "2025-03-15",
-    end_date: "2025-06-30",
-    money_level: 3, // $$$ - High
-    promising_future: true,
-    past_customer: false,
-    progress: 30,
-    person_in_charge: "David Lee",
-    importance: ""
-  },
-  {
-    id: 3,
-    name: "Brand Identity",
-    start_date: "2025-05-01",
-    end_date: "2025-05-30",
-    money_level: 1, // $ - Low
-    promising_future: false,
-    past_customer: true,
-    progress: 60,
-    person_in_charge: "Alex Wong",
-    importance: ""
-  },
-  {
-    id: 4,
-    name: "SEO Optimization",
-    start_date: "2025-04-20",
-    end_date: "2025-05-25",
-    money_level: 2, // $$ - Medium
-    promising_future: true,
-    past_customer: true,
-    progress: 60,
-    person_in_charge: "Emily Chen",
-    importance: ""
-  },
-  {
-    id: 5,
-    name: "Content Strategy",
-    start_date: "2025-05-05",
-    end_date: "2025-06-15",
-    money_level: 1, // $ - Low
-    promising_future: true,
-    past_customer: false,
-    progress: 0,
-    person_in_charge: "Michael Brown",
-    importance: ""
-  },
-  {
-    id: 6,
-    name: "E-commerce Integration",
-    start_date: "2025-03-01",
-    end_date: "2025-05-30",
-    money_level: 3, // $$$ - High
-    promising_future: false,
-    past_customer: true,
-    progress: 95,
-    person_in_charge: "Jessica Taylor",
-    importance: ""
-  },
+// export const projects = writable([
 //   {
-//     id: 7,
+//     id: 1,
+//     name: "Website Redesign",
+//     start_date: "2025-04-01",
+//     end_date: "2025-05-15",
+//     money_level: 2, // $$ - Medium
+//     promising_future: true,
+//     past_customer: true,
+//     progress: 75,
+//     person_in_charge: "Sarah Johnson",
+//     importance: ""
+//   },
+//   {
+//     id: 2,
+//     name: "Mobile App Development",
+//     start_date: "2025-03-15",
+//     end_date: "2025-06-30",
+//     money_level: 3, // $$$ - High
+//     promising_future: true,
+//     past_customer: false,
+//     progress: 30,
+//     person_in_charge: "David Lee",
+//     importance: ""
+//   },
+//   {
+//     id: 3,
+//     name: "Brand Identity",
+//     start_date: "2025-05-01",
+//     end_date: "2025-05-30",
+//     money_level: 1, // $ - Low
+//     promising_future: false,
+//     past_customer: true,
+//     progress: 60,
+//     person_in_charge: "Alex Wong",
+//     importance: ""
+//   },
+//   {
+//     id: 4,
+//     name: "SEO Optimization",
+//     start_date: "2025-04-20",
+//     end_date: "2025-05-25",
+//     money_level: 2, // $$ - Medium
+//     promising_future: true,
+//     past_customer: true,
+//     progress: 60,
+//     person_in_charge: "Emily Chen",
+//     importance: ""
+//   },
+//   {
+//     id: 5,
+//     name: "Content Strategy",
+//     start_date: "2025-05-05",
+//     end_date: "2025-06-15",
+//     money_level: 1, // $ - Low
+//     promising_future: true,
+//     past_customer: false,
+//     progress: 0,
+//     person_in_charge: "Michael Brown",
+//     importance: ""
+//   },
+//   {
+//     id: 6,
 //     name: "E-commerce Integration",
 //     start_date: "2025-03-01",
 //     end_date: "2025-05-30",
@@ -86,8 +74,22 @@ export const projects = writable([
 //     progress: 95,
 //     person_in_charge: "Jessica Taylor",
 //     importance: ""
-//   }
-]);
+//   },
+// //   {
+// //     id: 7,
+// //     name: "E-commerce Integration",
+// //     start_date: "2025-03-01",
+// //     end_date: "2025-05-30",
+// //     money_level: 3, // $$$ - High
+// //     promising_future: false,
+// //     past_customer: true,
+// //     progress: 95,
+// //     person_in_charge: "Jessica Taylor",
+// //     importance: ""
+// //   }
+// ]);
+export const projects = writable([
+  ]);
 
 // Functions to work with projects
 export const projectUtils = {

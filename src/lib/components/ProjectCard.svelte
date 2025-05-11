@@ -1,6 +1,6 @@
 <!-- src/lib/components/ProjectCard.svelte -->
 <script>
-	import { Icon, CheckCircle, UserCircle, Star } from 'svelte-hero-icons';
+	import { Icon, CheckCircle, UserCircle, Clock } from 'svelte-hero-icons';
 	import { projectUtils } from '$lib/stores/projects';
 	import ProgressGauge from './ProgressGauge.svelte';
 
@@ -9,7 +9,7 @@
     export let gaugeSize = 70; // Default if not passed
 
 	// Destructure project utils
-	const { calculateDays, getMoneyLevelSymbol, getCardColor, getProgressColor } = projectUtils;
+	const { getMoneyLevelSymbol, getCardColor, getProgressColor } = projectUtils;
 </script>
 
 <div
@@ -24,7 +24,7 @@
 
 			<!-- Project Duration -->
 			<div class="flex items-center mb-3 text-md text-gray-600">
-				<span class="font-medium">{calculateDays(project.start_date, project.end_date)} días</span>
+				<span class="font-medium">{project.passed_days} días</span>
 			</div>
 		</div>
 
@@ -40,6 +40,12 @@
 			<!-- Money Level -->
 			<div class="flex items-center">
 				<span class="font-medium text-gray-700">{getMoneyLevelSymbol(project.money_level)}</span>
+			</div>
+			<div class="flex items-center">
+				<div class="flex items-center">
+					<Icon src={Clock} class="h-4 w-4 text-indigo-700 mr-1" />
+					<span class="text-indigo-700">{project.total_spent_time}h</span>
+				</div>
 			</div>
 
 			<!-- Person in Charge -->

@@ -1,10 +1,15 @@
 <!-- src/routes/+page.svelte -->
-<script>
-	import { projects } from '$lib/stores/projects';
+<script lang="ts">
 	import ProjectCard from '$lib/components/ProjectCard.svelte';
+	
+	// Use `data` prop passed by SvelteKit
+	export let data: {
+		projects: any[];
+	};
 
-    $: gaugeSize = $projects.length <= 3 ? 25 : 12.5;
+	$: gaugeSize = data.projects.length <= 3 ? 25 : 12.5;
 </script>
+
 
 <svelte:head>
 	<title>Project Tracker</title>
@@ -14,7 +19,7 @@
 	<div class="mx-auto h-full">
 		<!-- Project Cards Grid -->
 		<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 h-full">
-			{#each $projects as project (project.id)}
+			{#each data.projects as project (project.id)}
 				<div class="h-full">
 					<ProjectCard {project} {gaugeSize}/>
 				</div>
