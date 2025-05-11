@@ -83,11 +83,14 @@ export async function fetchProjectProgress(): Promise<ProjectProgress[]> {
   // Iterate over each merged project to fetch issues, time entries, and calculate progress
   for (const project of mergedProjects) {
     // Step 4: Get all issues for this project
-    const issuesRes = await fetch(`${REDMINE_BASE_URL}/issues.json?project_id=${project.id}&status_id=*`, { headers });
+    const issuesRes = await fetch(`${REDMINE_BASE_URL}/issues.json?project_id=${project.id}&limit=500&status_id=*`, { headers });
     const { issues } = await issuesRes.json();
 
     const total = issues.length;
     const closed = issues.filter((issue: any) => issue.status.name.toLowerCase().includes('closed')).length;
+    // console.log('Project:', project.name);
+    // console.log('Total Issues:', total);
+    // console.log('Closed Issues:', closed);
     const progress = total > 0 ? Math.round((closed / total) * 100) : 0;
 
     // Step 5: Get all time entries for the project
