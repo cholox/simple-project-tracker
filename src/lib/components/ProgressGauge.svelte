@@ -7,7 +7,7 @@
     $: circumference = 2 * Math.PI * radius;
     $: strokeDashoffset = circumference - (safeProgress / 100) * circumference;
     $: color = getProgressColor(safeProgress);
-    $: fontSize = Math.max(size * 0.15, 12); // responsive text inside gauge
+    $: fontSize = Math.max(size * 0.15, 50); // responsive text inside gauge
   
     /**
 	 * @param {number} progress
