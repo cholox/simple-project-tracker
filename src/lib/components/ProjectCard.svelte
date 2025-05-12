@@ -39,9 +39,6 @@
 		<div class="space-y-2 text-lg">
 			<!-- Money Level -->
 			<div class="flex items-center">
-				<span class="font-medium text-gray-700">{getMoneyLevelSymbol(project.money_level)}</span>
-			</div>
-			<div class="flex items-center">
 				<div class="flex items-center">
 					<Icon src={Clock} class="h-4 w-4 text-indigo-700 mr-1" />
 					<span class="text-indigo-700">{project.total_spent_time}h</span>
